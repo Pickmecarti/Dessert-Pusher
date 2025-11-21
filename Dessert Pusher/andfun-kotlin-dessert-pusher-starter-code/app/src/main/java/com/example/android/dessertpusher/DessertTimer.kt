@@ -25,8 +25,8 @@ class DessertTimer(lifecycle: Lifecycle) : LifecycleObserver {
      * [Handler] is a class meant to process a queue of messages (known as [android.os.Message]s)
      * or actions (known as [Runnable]s)
      */
-    private var handler = Handler(Looper.getMainLooper())
-    private lateinit var runnable: kotlinx.coroutines.Runnable
+    private var handler = Handler()
+    private lateinit var runnable: Runnable
 
 
     init {

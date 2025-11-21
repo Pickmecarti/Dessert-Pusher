@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Setup the DessertTimer
-        dessertTimer = DessertTimer(this.lifecycle)
+        dessertTimer = DessertTimer()
 
         binding.revenue = revenue
         binding.amountSold = dessertsSold
@@ -62,6 +62,7 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         dessertsSold = 0
+        dessertTimer.startTimer()
         Timber.i("onStart Called")
     }
 
@@ -77,6 +78,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
+        dessertTimer.stopTimer()
         Timber.i("onStop Called")
     }
 
